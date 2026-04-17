@@ -159,7 +159,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <SectionHeading>FAVOURITE WORKS.</SectionHeading>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
               {
                 title: 'AI Character',
@@ -172,10 +172,6 @@ export const Home = () => {
               {
                 title: 'Food Photography',
                 img: 'https://github.com/sanjana-nayak-design/WEBSITE-IMAGES/blob/main/WhatsApp%20Image%202026-04-17%20at%202.34.03%20PM.jpeg?raw=true'
-              },
-              {
-                title: 'Moodboard Collage Design',
-                img: 'https://github.com/sanjana-nayak-design/WEBSITE-IMAGES/blob/main/WhatsApp%20Image%202026-04-17%20at%202.35.12%20PM.jpeg?raw=true'
               }
             ].map((work, idx) => (
               <motion.div 
@@ -226,14 +222,14 @@ export const Home = () => {
             </div>
             {/* Card 3 */}
             <div className="bg-retro-offwhite p-12 hover:bg-retro-purple transition-colors group">
-              <p className="font-bold text-sm mb-2 opacity-50">03 / BRAND STRATEGY</p>
+              <p className="font-bold text-sm mb-2 opacity-50">03 / DIRECTOR OF PHOTOGRAPHY</p>
               <h3 className="font-display text-2xl md:text-3xl mb-4 uppercase">Cinnamon & Soul DOP</h3>
-              <p className="font-medium text-sm md:text-base">Architecting the visual identity and market entry for premium cloud kitchens.</p>
+              <p className="font-medium text-sm md:text-base">Capturing creative visuals for a burger brand in manipal.</p>
             </div>
             {/* Card 4 */}
             <div className="bg-retro-offwhite p-12 hover:bg-retro-blue transition-colors group">
               <p className="font-bold text-sm mb-2 opacity-50">04 / TEAM HEAD</p>
-              <h3 className="font-display text-2xl md:text-3xl mb-4 uppercase">TTT MAGE GRAPHICS & MEDIA HEAD</h3>
+              <h3 className="font-display text-2xl md:text-3xl mb-4 uppercase">TTT MAHE GRAPHICS & MEDIA HEAD</h3>
               <p className="font-medium text-sm md:text-base">Heading the Graphics & Media department for the 2025-26 tenure.</p>
             </div>
           </div>

@@ -14,8 +14,13 @@ export const SectionHeading = ({ children, className = "" }: { children: React.R
   <h2 className={`retro-title mb-8 ${className}`}>{children}</h2>
 );
 
-export const BrutalCard = ({ children, className = "", color = "bg-white" }: { children: React.ReactNode, className?: string, color?: string }) => (
-  <div className={`brutal-border-lg p-6 ${color} ${className}`}>
-    {children}
-  </div>
-);
+export const BrutalCard = ({ children, className = "", color = "bg-white" }: { children: React.ReactNode, className?: string, color?: string }) => {
+  const hasPadding = className.includes('p-');
+  const hasBorder = className.includes('brutal-border');
+  
+  return (
+    <div className={`${!hasBorder ? 'brutal-border-lg' : ''} ${!hasPadding ? 'p-6' : ''} ${color} ${className}`}>
+      {children}
+    </div>
+  );
+};
