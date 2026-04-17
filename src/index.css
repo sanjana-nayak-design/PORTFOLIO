@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Shrikhand", cursive;
+  --font-sans: "Space Grotesk", sans-serif;
+
+  --color-retro-mustard: #FFC567;
+  --color-retro-pink: #FB7DA8;
+  --color-retro-orange: #FD5A46;
+  --color-retro-purple: #552CB7;
+  --color-retro-green: #00995E;
+  --color-retro-blue: #058CD7;
+  --color-retro-offwhite: #F9F9F7;
+
+  --border-width-brutal: 1px;
+}
+
+@layer base {
+  body {
+    @apply bg-retro-offwhite text-black font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .brutal-border {
+    @apply border-1 border-black rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .brutal-border-lg {
+    @apply border-1 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .brutal-border-xl {
+    @apply border-1 border-black rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .pattern-checkerboard-retro {
+    background-color: #F9F9F7;
+    background-image: 
+      linear-gradient(45deg, #FFC567 25%, transparent 25%), 
+      linear-gradient(-45deg, #FFC567 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #FFC567 75%), 
+      linear-gradient(-45deg, transparent 75%, #FFC567 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+
+  .pattern-psychedelic {
+    background: 
+      radial-gradient(circle at 0% 50%, #FD5A46 0%, transparent 50%),
+      radial-gradient(circle at 100% 50%, #FB7DA8 0%, transparent 50%),
+      radial-gradient(circle at 50% 0%, #FFC567 0%, transparent 50%),
+      radial-gradient(circle at 50% 100%, #552CB7 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: move 10s ease infinite;
+  }
+
+  @keyframes move {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+
+  .pattern-starburst {
+    background: 
+      repeating-conic-gradient(from 0deg, #F9F9F7 0deg 15deg, #FFC567 15deg 30deg);
+  }
+
+  .marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .text-stroke-brutal {
+    -webkit-text-stroke: 1.5px black;
+    text-shadow: 4px 4px 0px #000;
+  }
+
+  .text-layer-pink {
+    color: #FB7DA8;
+    text-shadow: 2px 2px 0px #000, 4px 4px 0px #552CB7;
+  }
+  
+  .text-layer-yellow {
+    color: #FFC567;
+    text-shadow: 2px 2px 0px #000, 4px 4px 0px #FD5A46;
+  }
+
+  .wavy-ribbon {
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,100 L0,100 Z" fill="black"/></svg>');
+    mask-size: 100% 100%;
+  }
+
+  .pattern-retro-wavy {
+    background: radial-gradient(circle at 100% 50%, #FFC567 20%, #FD5A46 21%, #FD5A46 34%, #FB7DA8 35%, #FB7DA8 48%, #552CB7 49%, #552CB7 62%, #058CD7 63%, #058CD7 76%, #00995E 77%);
+    background-size: 100px 100px;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.1;
+  }
+}
+
+.retro-title {
+  @apply font-display text-4xl md:text-6xl tracking-tight uppercase leading-tight;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #FD5A46, #FB7DA8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
